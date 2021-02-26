@@ -1,0 +1,31 @@
+Input: rating = [2,5,3,4,1]
+Output: 3
+Explanation: We can form three teams given the conditions. (2,3,4), (5,4,1), (5,3,1)
+A team is valid if: (rating[i] < rating[j] < rating[k]) or (rating[i] > rating[j] > rating[k]) where (0 <= i < j < k < n).
+
+/**
+ * @param {number[]} rating
+ * @return {number}
+ */
+var numTeams = function (rating) {
+  let result = []
+  for (i = 0; i < rating.length - 2; i++)
+  {
+    for (j = i + 1; j < rating.length - 1; j++)
+    {
+      for (k = j + 1; k < rating.length; k++)
+      {
+        if (rating[i] > rating[j] && rating[i] > rating[k] && rating[j]>rating[k])
+        {
+        result.push([rating[i],rating[j],rating[k]])
+        }
+        else if   (rating[i] < rating[j] && rating[i] < rating[k] && rating[j]<rating[k])
+        {
+        result.push([rating[i],rating[j],rating[k]])
+        }
+        }
+      }
+    }
+    return result.length
+};
+console.log(numTeams([1,2,3,4]));
