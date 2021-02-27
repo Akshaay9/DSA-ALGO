@@ -1,0 +1,32 @@
+union,1st one is perfect
+intern=section is mehh
+var intersection = function (nums1, nums2) {
+  let result = []
+let result2=[]
+  
+  for (num of nums1)
+    
+    if (nums2.indexOf(num) >-1 && result.indexOf(num)<0)
+    {
+      result.push(num)
+    }
+  for (num of nums1)
+  {
+    if (nums2.indexOf(num) < 0)
+    {
+      result2.push(num)
+      }
+    }
+  for (num of nums2)
+  {
+    if (nums1.indexOf(num) < 0)
+    {
+      result2.push(num)
+      }
+    }
+   
+ 
+    
+  return [result,result2]
+};
+console.log(intersection([7, 1, 5, 2, 3, 6],[3, 8, 6, 20, 7]));
