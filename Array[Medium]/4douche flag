@@ -1,0 +1,22 @@
+/**
+ * @param {number[]} nums
+ * @param {number} k
+ * @return {number}
+ */
+let douchefLAG = (nums) => {
+  let result = []
+  let i = 0
+  while (i <= 2)
+  {
+    for (num of nums)
+    {
+      console.log(i);
+      if (num == i)
+        result.push(i)
+    }
+  i++
+  }
+  
+  return result
+}
+console.log(douchefLAG([0, 1, 2, 0, 1, 2]));
