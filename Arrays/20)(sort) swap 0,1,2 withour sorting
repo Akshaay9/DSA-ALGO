@@ -1,0 +1,27 @@
+const newgativeNum = (num) => {
+  let left = 0;
+  let mid = 0;
+  let right = num.length - 1;
+  while (mid <= right)
+  {
+    if (num[mid] == 0)
+    {
+      [num[left], num[mid]] = [num[mid], num[left]]
+      left++
+      mid++
+    }
+    else if (num[mid] == 1)
+    {
+      mid++
+    }
+    else if (num[mid] == 2)
+    {
+      [num[mid], num[right]] = [num[right], num[mid]]
+      right--
+      }
+  }
+  return num
+};
+console.log(newgativeNum([0,1,1,0,0,2,2,2,0,1]));
+
+
