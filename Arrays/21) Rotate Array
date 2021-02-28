@@ -1,0 +1,25 @@
+Cyclically rotate an array by one 
+Basic Accuracy: 76.33% Submissions: 7047 Points: 1
+Given an array, rotate the array by one position in clock-wise direction.
+ 
+
+Example 1:
+
+Input:
+N = 5
+A[] = {1, 2, 3, 4, 5}
+Output:
+5 1 2 3 4
+
+// rotate cyniclially Array
+const rotateArray = (num,k)=> {
+  while (k)
+  {
+    num.unshift(num[num.length - 1])
+    num.splice(num.length-1,1)
+    k--
+  }
+  return num
+}
+
+console.log(rotateArray([1,2,3,4,5],3));
