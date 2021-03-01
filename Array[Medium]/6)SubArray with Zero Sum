@@ -1,0 +1,17 @@
+// check if subarry has a ZERO sum
+const test = nums => {
+  let sum = 0
+  let set= new Set()
+  for (num of nums)
+  {
+    sum += num
+    if (set.has(sum))
+    {
+      return true
+    }
+    else {
+      set.add(sum)
+    }
+  
+    }
+}
