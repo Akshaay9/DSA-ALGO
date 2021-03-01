@@ -1,0 +1,18 @@
+Input: N = 5, arr[] = {2, 4, 1, 3, 5}
+Output: 3
+Explanation: The sequence 2, 4, 1, 3, 5 
+has three inversions (2, 1), (4, 1), (4, 3).
+
+const inversion = (num) => {
+  let count = 0;
+  for (i = 0; i < num.length - 1; i++) {
+    for (j = i + 1; j < num.length; j++) {
+      if (num[i] > num[j]) {
+        [num[i], num[j]] = [num[j], num[i]];
+        count = count + 1;
+      }
+    }
+  }
+  return count;
+};
+console.log(inversion([10, 10, 10]));
