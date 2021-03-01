@@ -1,0 +1,31 @@
+const test = (nums) => {
+  let i = 0;
+  let j = 0;
+  while (i < nums.length && j < nums.length) {
+    console.log(nums);
+    if (nums[i] < 0) {
+      i++;
+      j++;
+    } else if (nums[j] < 0) {
+      [nums[i], nums[j]] = [nums[j], nums[i]];
+      i++;
+      j--;
+    } else if (nums[i] > 0) {
+      j++;
+    }
+  }
+
+  let k = 1;
+  let l = 0;
+  while (nums[l] < 0) {
+    l++;
+  }
+  let x = l;
+  while (l < nums.length && k <= x) {
+    [nums[k], nums[l]] = [nums[l], nums[k]];
+    k = k + 2;
+  l++;
+  }[]
+  return nums;
+};
+console.log(test([1, 2, 3, -4, -1, 4]));
