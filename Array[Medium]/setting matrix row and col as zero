@@ -1,0 +1,39 @@
+
+const setZeroes = (matrix) => {
+  let x = new Set()
+  let y = new Set()
+  for (i = 0; i < matrix.length; i++)
+  {
+    for (j = 0; j < matrix[i].length; j++)
+    {
+      if (matrix[i][j] == 0)
+      {
+        x.add(i)
+        y.add(j)
+        }
+      }
+  }
+  for (i = 0; i < matrix.length; i++)
+  {
+    for (j = 0; j < matrix[i].length; j++)
+    {
+      if (x.has(i) || y.has(j))
+      {
+        matrix[i][j]=0
+      }
+      }
+  }
+  return matrix
+ 
+ 
+}
+console.log(
+  setZeroes ([
+    [1, 1, 1],
+    [1, 0, 1],
+    [1, 1, 1],
+  ])
+);
+// 101
+// 000
+// 101
